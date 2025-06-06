@@ -1,0 +1,204 @@
+// Collections in dart
+// Lists
+
+// List<int> ages = [10,15,20]; //Int List
+// List<String> names = ['Suman','Ram', 'Hari']; // String List
+// var mixed = [1, 'Shawn', 3.14, true]; // Mixed List
+
+// void main(){
+//     for(var a in ages){
+//         print(a);
+//     }
+//     print(names);
+//     print(mixed);
+// }
+
+// void main(){
+//     var list = List.filled(5, 0);
+//     print(list);
+// }
+
+// Accessing elements in a list
+// List<int> numbers = [1,2,3,4,5];
+
+// void main(){
+//     print(numbers[3]);
+// }
+
+// Get Index number of an element
+// List<int> numbers = [1,2,3,4,5];
+// void main(){
+//     print(numbers.indexOf(3));
+// }
+
+// Finding the length of a list
+// List<int> numbers = [1,2,3,4,5];
+// void main(){
+//     print(numbers.length);
+// }
+
+//Mutable and Immutable Lists
+// List<String> names = ["Mohan", "Dolma", "Maya", "Karma", "Ram", "Shyam"]; //Mutable Lists
+
+// void main(){
+//     names[4] = "Kritan";
+//     names[5] = "Mobin";
+//     print(names);
+// }
+
+// const List<String> places = ["Pokhara", "Manang", "Mustang", "Kathmandu"]; // Immutable Lists
+// void main(){
+//     places[3] = "Janakpur";
+//     print(places);
+// }
+
+// Lists properties: first, last, length, isEmpty, isNotEmpty, reversed, single
+// List<String> fruits = ["Mango", "Banana", "Apple", "Watermelon"];
+// void main(){
+//     print(fruits.first); // First element
+//     print(fruits.last); // Last element
+//     print(fruits.length); // Length of the list
+//     print(fruits.isEmpty); // Check if the list is empty
+//     print(fruits.isNotEmpty); // Check if the list is not empty
+//     print(fruits.reversed.toList()); // Reversed list
+//     print(fruits.single); // Single element (will throw an error if more than one element)
+// }
+
+// Adding elements on list
+// void main(){
+//     var numlist1 = [1,2,3,4,5];
+//     var numlist2 = [6,7,8,9,10];
+//     numlist1.add(numlist2[0]);
+//     print(numlist1);
+//     numlist1.addAll(numlist2);
+//     print(numlist1);
+// }
+
+// Inserting elements in a list
+// void main(){
+//     List<int> myList = [1, 2, 3, 4, 5];
+//     print(myList);
+//     myList.insert(2, 10); // 2 is the index where 10 wil be inserted
+//     myList.insertAll(3, [20, 30]); // 3 is the index where 20 and 30 will be inserted
+//     print(myList);
+// }
+
+// Replacing Range of List
+// void main(){
+//     int start = 0;
+//     int end = 4;
+//     List<int> replacements = [100, 200, 300, 400,];
+//     var list = [10, 20, 30, 40, 50];
+//     list.replaceRange(start, end, replacements);
+//     print(list);
+// }
+
+// Multiply all elements in a list by 2
+// void main(){
+//     List<int> numlist = [1, 2, 3, 4, 5];
+//     var operatedList = numlist.map((n) => n*2);
+//     print(operatedList.toList());
+// }
+
+// Combinint two or more lists
+// void main() {
+//   List<String> names = ["Raj", "John", "Rocky",];
+//   List<String> names2 = ["Mike", "Subash", "Mark"];
+
+//   List<String> allNames = [...names, ...names2];
+//   print(allNames);
+// }
+
+// void main(){
+//      bool sad = false;
+//      var cart = ['apple', 'banana', if(sad) 'Beer'];
+//      print(cart);
+// }
+
+void main(){
+List<int> numbers = [2,4,6,8,10,11,12,13,14];
+
+List<int> even = numbers.where((number) => number % 2 == 0).toList();
+print(even);
+}
+
+// Map in Dart
+
+void main(){
+    Map<String, int> ages = {
+        'Ram': 24,
+        'Shyam': 21,
+        'Hari': 30
+    };
+    print(ages);
+    print(ages['Ram']);
+    print(ages.keys);
+    print(ages.values);
+    print(ages.isEmpty);
+    print(ages.isNotEmpty);
+    print(ages.length);
+
+    // Adding elements to Map
+    ages['Karma'] = 21;
+    print(ages);
+
+    // Update an element in Map
+    ages['Shyam'] = 33;
+    print(ages);
+
+    // Converting Map Keys and Values to List
+    print(ages.keys.toList());
+    print(ages.values.toList());
+
+    // Checking map contains specific Key/Value or Not
+    print(ages.containsKey('Ram'));
+    print(ages.containsValue(21));
+
+    // Removing an element from Map
+    ages.remove('Shyam');
+    print(ages);
+
+    // Looping through Map
+    // for(MapEntry ages in ages.entries){
+    //     print(('${ages.key} : ${ages.value}'));
+    // }
+
+    //Looping in map using forEach
+    ages.forEach((key,value)=> print('Key is $key and value is $value'));
+
+    // Remove element using Where
+    ages.removeWhere((key, value) => value < 25);
+    print(ages);
+}
+
+// Where filter
+
+// Filter only odd number from list
+// void main(){
+//     List<int> nums = [1,2,3,4,5,6,7,8,9,10];
+//     var result = nums.where((num) => num%2 != 0);
+//     print(result.toList());
+// }
+
+// Filter days start with 'S'
+// void main(){
+//     List<String> days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+//     List<String> filteredDays = days.where((day) => day.startsWith('S')).toList();
+//     print(filteredDays);
+// }
+
+void Marks(){
+    Map<String, double> marks = {
+        'Ram': 90,
+        'Hari': 80,
+        'Shyam': 50
+    };
+
+    marks.removeWhere((key, value) => value < 60);
+    print(marks);
+}
+
+void main(){
+    Marks();
+}
