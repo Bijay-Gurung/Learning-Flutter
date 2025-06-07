@@ -1,0 +1,71 @@
+// Asynchronous Programming
+
+/*
+Why do we need Asynchronous Programming?
+-> To fetch Data from the internet.
+To Write something to database.
+To Execute a long time consuming task.
+To read data from file, and
+To Download a File.
+*/
+// void main(){
+//     print("First Operation");
+//     Future.delayed(Duration(seconds: 3), () => print("Second Big Operation"));
+//     print("Third Operation");
+//     print("Fourth Operation");
+// }
+
+// Future<String> getUserName() async{
+//     return Future.delayed(Duration(seconds: 2), () => "Karma Gurung");
+// }
+
+// void main(){
+//     print("Start");
+//     getUserName().then((value) => print(value));
+//     print("End");
+// }
+
+// void main(){
+//     print("Start");
+//     getData();
+//     print("End");
+// }
+
+// void getData() async{
+//     String data = await middleFunction();
+//     print(data);
+//     print("Data fetched Successfully");
+// }
+
+// Future<String> middleFunction(){
+//     return Future.delayed(Duration(seconds: 5), () => "Hello");
+// }
+
+// Stream: It is a sequence of asynchronous events that represent multiple values over time.
+// Stream<String> getUserName() async*{
+//     await Future.delayed(Duration(seconds: 1));
+//     yield "Bijay";
+//     await Future.delayed(Duration(seconds: 1));
+//     yield "Karma";
+//     await Future.delayed(Duration(seconds: 1));
+//     yield "Tshering";
+// }
+
+// void main() async{
+//     await for (String name in getUserName()){
+//         print(name);
+//     }
+// }
+
+import 'dart:async';
+
+StreamController<String> controller = StreamController<String>();
+Stream stream = controller.stream;
+
+void main(){
+    stream.listen((value) {
+        print("Value from controller: $value");
+    });
+
+    controller.add('God is Great');
+}

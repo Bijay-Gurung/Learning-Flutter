@@ -1,0 +1,141 @@
+// Null Safety
+// variable and fileds are non-nullable by default. they cannot have a value null until we explicitly allow it.
+// int productID = 1; // non-nullable variable
+// // int productID = null; // it gives error
+// void main(){
+//     print(productID);
+// }
+
+// Declaring Null Value
+// double? bodyWeight;
+
+// void main(){
+//     bodyWeight = 100.0;
+//     bodyWeight = null; // allowed because bodyweight is nullable
+//     print(bodyWeight);
+// }
+
+// void main(){
+// // Declaring a nullable variable by using ?
+// String? name;
+// // Assigning John to name
+// name = "John";
+// // Assigning null to name
+// name = null;
+// // Checking if name is null using if statement
+// if(name == null){
+// print("Name is null");
+// }
+// // Using ?? operator to assign a default value
+// String name1 = name ?? "Stranger";
+// print(name1);
+// // Using ! operator to return null if name is null
+// String name2 = name!;
+// print(name2);
+// }
+
+// Lists of nullable elements
+// void main(){
+//     List<int?> num = [1,2,3,null,5];
+//     print(num);
+// }
+
+// Null Safety in dart function
+// void printAddress(String? address){
+//     print(address);
+// }
+
+// void main(){
+//     printAddress(null);
+// }
+
+// Null Safety in Class
+
+// class Person{
+//     String? name;
+//     Person(this.name);
+// }
+
+// void main(){
+//     Person person = Person(null); 
+// }
+
+// class Profile{
+//     String? name;
+//     String? bio;
+
+//     Profile(this.name, this.bio);
+
+//     void printProfile(){
+//         print("Name: ${name ?? 'Unknown'}");
+//         print("Bio: ${bio ?? 'No bio available'}");
+//     }
+// }
+
+// void main(){
+//     Profile profile1 = Profile("Karma", "Software Engineer and ML Engineer");
+//     Profile profile2 = Profile("Don", null);
+
+//     profile1.printProfile();
+//     profile2.printProfile();
+// }
+
+// Type Promotion
+// Promoting from general types to specific subtypes.
+// void main(){
+//     Object name = "Karma";
+
+//     if (name is String){
+//         print(name.length);
+//     }
+// }
+// void main(){
+//     String result;
+
+//     if(DateTime.now().hour < 12){
+//         result = "Good Morning";
+//     }else{
+//         result = "Good Afternoon";
+//     }
+
+//     print(result);
+//     print("The result length is: ${result.length}");
+// }
+
+// Promoting from nullable types to non-nullable types.
+
+// void printLength(String? text){
+//     if(text==null){
+//         throw Exception("The text is null");
+//     }
+//     print("Length of Text is: ${text.length}");
+// }
+
+// void main(){
+//     printLength("Hello");
+// }
+
+// Late Keyword
+/*
+This keyword is used to declare a variable that will be initialized later.
+*/
+
+// late String name;
+// void main(){
+//     name = "Don";
+//     print(name);
+// }
+
+class Person{
+    late String name;
+
+    void Greet(){
+        print("Namaste, ${name}");
+    }
+}
+
+void main(){
+    Person person = Person();
+    person.name = "Don";
+    person.Greet();
+}

@@ -1,42 +1,24 @@
-// File Handling
-import 'dart:io'; // To handle files we have to import 'dart:io'
+// Late Keyword
+/*
+This keyword is used to declare a variable that will be initialized later.
+*/
 
-// Read Files
-
-// // This program reads the content of test.txt file and prints it to the console.
+// late String name;
 // void main(){
-//     File file = File('test.txt');
-//     String content = file.readAsStringSync();
-//     print(content); // Print the content of the file
-//     print(file.path); // print the location of the file
-//     print(file.absolute.path); // print the absolute path of the file
-//     print(file.lastModifiedSync); // print the last modified date of the file
+//     name = "Don";
+//     print(name);
 // }
 
-// void main(){
-//     File file = File('test.csv');
-//     String content = file.readAsStringSync();
-//     print(content);
-// }
+class Person{
+    late String name;
 
-// Write Files
-// void main(){
-//     File file = File('test.txt');
-//     file.writeAsStringSync('Karma G');
-//     String content = file.readAsStringSync();
-//     print(content);
-// }
+    void Greet(){
+        print("Namaste, ${name}");
+    }
+}
 
-// void main(){
-//     File file = File('test.txt');
-//     file.writeAsStringSync(' is the goat.', mode: FileMode.append);
-//     String content = file.readAsStringSync();
-//     print(content);
-// }
-
-// Delete Files
 void main(){
-    File file = File('test.txt');
-    file.deleteSync();
-    print("File Deleted");
+    Person person = Person();
+    person.name = "Don";
+    person.Greet();
 }
