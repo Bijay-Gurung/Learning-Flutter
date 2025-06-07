@@ -1,0 +1,21 @@
+// Classes: It is a blueprint for creating an objects.
+
+// class Person{
+//     String name;
+//     int age;
+
+//     // Constructor
+//     Person(this.name, this.age);
+
+//     // Method
+//     void introduce(){
+//         print("Hello, my name is ${name} and I'm ${age} years old.");
+//     }
+// }
+
+// void main(){
+//     // Objects
+//     Person person = Person("Bijay",21);
+//     person.introduce();
+// }
+
